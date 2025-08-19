@@ -1,0 +1,94 @@
+08.19 3:09 PM
+Day-2
+For Loop:
+import java.util.Scanner;
+class for_loop {
+ public static void main(String[] args) {
+ System.out.println("Enter the Limit :");
+ Scanner in = new Scanner(System.in);
+ int n = in.nextInt();
+ for(int i = 1; i <= n; i++) {
+ System.out.println(i);
+ }
+ }
+}
+
+Enhanced For Loop (For-Each)
+Program:
+class Enhanced_for {
+ public static void main(String[] args) {
+ int number[] = {10, 20, 30, 40, 50};
+ for(int n : number) {
+ System.out.println(n);
+ }
+ }
+}
+Output:
+10
+20
+30
+40
+50
+
+Nested Loops
+Star Pattern Program:
+class Nested_forloop {
+ public static void main(String[] args) {
+ int i, j;
+ for(i = 1; i <= 5; i++) {
+ for(j = 1; j <= i; j++) {
+ System.out.print("*");
+ }
+ System.out.println("");
+ }
+ }
+}
+Output:
+*
+**
+***
+****
+*****
+
+Break Statement:
+class break_example {
+ public static void main(String[] args) {
+ int i;
+ for(i = 1; i <= 10; i++) {
+ System.out.println(i);
+ if (i == 8)
+ break;
+ }
+ }
+}
+Output:
+1
+2
+3
+4
+5
+6
+7
+8
+
+Break and Continue Together:
+class break_continue {
+ public static void main(String[] args) {
+ int i;
+ for(i = 1; i <= 10; i++) {
+ if(i == 5)
+ continue;
+ System.out.println(i);
+ if (i == 8)
+ break;
+ }
+ }
+}
+Output:
+1
+2
+3
+4
+6
+7
+8

@@ -1,0 +1,207 @@
+08.19 3:43 PM
+Day-9
+Hierarchical Inheritance
+ One superclass, multiple subclasses.
+//Hierarchical Inheritance in java 
+class shape{
+float length,breadth,radius;
+}
+class rect extends shape{ 
+public rect (float l,float b){
+length = l; 
+breadth = b;
+}
+float rectangle_area(){ 
+return length * breadth;
+}
+}
+class circle extends shape { 
+public circle(float r){
+radius = r;
+}
+float circle_area(){
+return 3.14f * (radius * radius);
+}
+}
+class square extends shape{ 
+public square (float l){
+length = l;
+}
+float square_area(){
+return (length * length);
+}
+}
+class Hierarchical {
+public static void main(String[] args){ 
+rect o1 = new rect (2,5);
+System.out.println("Area of Reactangle : " +o1.rectangle_area()); 
+circle o2 = new circle (5);
+System.out.println("Area of circle : " +o2.circle_area()); 
+square o3 = new square (3);
+System.out.println("Area of square : " +o3.square_area());
+}}
+*/ 
+output:
+Area of Reactangle : 10.0 
+Area of circle : 78.5
+Area of square : 9.0
+
+6. Abstraction using Abstract Class
+abstract class shape{ 
+abstract void draw(); 
+void message(){
+System.out.println("Message from Shape");
+}
+}
+class rectangleshape extends shape
+{
+void draw(){
+System.out.println("Draw Rectangle using length & Breadth");
+}
+}
+class abstractDemo {
+public static void main(String [] args){ 
+rectangleshape o = new rectangleshape(); 
+o.draw();
+o.message();
+}
+}
+output:
+Draw Rectangle using length & Breadth 
+Message from Shape
+//Example for Abstract class
+abstract class Mobile{ 
+void VoiceCall(){
+System.out.println("You can Make Voice Call");
+}
+abstract void camera(); 
+abstract void touchDisplay();
+}
+class samsung extends Mobile { 
+void camera() {
+System.out.println("64 Mega pixel Camera");
+}
+void touchDisplay() { 
+System.out.println("5.5 inch Display");
+}
+void fingerPrint() {
+System.out.println("In the Display fast finger sensor");
+}
+}
+class Nokia extends Mobile
+{
+void camera(){
+System.out.println("2 Mega pixel Camera");
+}
+void touchDisplay(){ 
+System.out.println("4.8 inch Display");
+}
+}
+class abstractDemo2 {
+public static void main (String args[]){ 
+samsung M32 = new samsung(); 
+M32.VoiceCall(); 
+M32.touchDisplay();
+M32.camera(); 
+M32.fingerPrint();
+System.out.println("...............................");
+Nokia N1 = new Nokia(); 
+N1.VoiceCall(); 
+N1.touchDisplay(); 
+N1.camera();
+}
+}
+output:
+You can Make Voice Call
+5.5 inch Display
+64 Mega pixel Camera
+In the Display fast finger sensor
+...............................
+You can Make Voice Call
+4.8 inch Display
+2 Mega pixel Camera
+
+7. Interface
+interface Animal{ 
+void sound(); 
+void sleep();
+}
+class Dog implements Animal{
+@Override
+public void sound() {
+System.out.println("The Dog sounds like : Woof");
+}
+@Override
+public void sleep() { 
+System.out.println("Dog sleeping");
+}
+}
+class interfaceDemo {
+public static void main(String [] args){ 
+Dog o = new Dog();
+o.sound();
+o.sleep();
+}
+}
+output:
+The Dog sounds like : Woof 
+Dog sleeping
+
+8. Interface with Multiple Inheritance (Phone + Camera + Player)
+/*
+//Interface problems2
+class Phone{
+void voicecall(){ 
+System.out.println("Make Voicecalls");
+}
+void sms(){
+System.out.println("We can send sms");
+}
+}
+interface Camera{ 
+void click(); 
+void record();
+}
+interface Player{ 
+void play(); 
+void pause(); 
+void stop();
+}
+class Smartphone extends Phone implements Camera,Player
+{
+public void click(){
+System.out.println("You Can make multiple click");
+}
+public void record(){
+System.out.println("You can record Videos");
+}
+public void play(){ 
+System.out.println("Play the songs");
+}
+public void pause(){
+System.out.println("Pause the songs");
+}
+public void stop(){
+System.out.println("you have options to stop the song");
+}
+}
+class interfaceDemo2 {
+public static void main(String [] args){ 
+Smartphone o = new Smartphone(); 
+o.voicecall();
+o.sms();
+o.click();
+o.record();
+o.play();
+o.pause();
+o.stop();
+}
+}
+output:
+Make Voicecalls 
+We can send sms
+You Can make multiple click 
+You can record Videos
+Play the songs 
+Pause the songs
+
